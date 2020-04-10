@@ -17,6 +17,7 @@ class _HomeState extends State<SearchPage> {
 
   Future getImagesAsList() async {
     print("In GetImage !");
+    print("In GetImage !");
 
     paths = new List<String>();
     try{
