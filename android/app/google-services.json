@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "27934976317",
+    "firebase_url": "https://dedmo-4d4e7.firebaseio.com",
+    "project_id": "dedmo-4d4e7",
+    "storage_bucket": "dedmo-4d4e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27934976317:android:be3627b96653f74e2dbd54",
+        "android_client_info": {
+          "package_name": "com.example.imrichapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27934976317-fjpb7ona0gi7h504ij89fj6ssa9v6tam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTMXWeJECmrK7xoIOZUiXDoWWHhWAwTgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27934976317-fjpb7ona0gi7h504ij89fj6ssa9v6tam.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
