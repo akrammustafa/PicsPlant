@@ -1,4 +1,4 @@
-# imrichapplatest
+# imrichapp
 
 A new Flutter application.
 

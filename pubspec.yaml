@@ -28,16 +28,13 @@ dependencies:
   firebase_storage:
   universal_io:
   path_provider:
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
 
-   uses-material-design: true
+  uses-material-design: true
 
-   assets:
-    - assets/image/
-
-
+  assets:
+    - assets/images/
