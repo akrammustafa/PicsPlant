@@ -1,4 +1,4 @@
-package com.example.im_rich_app
+package com.example.imrichapplatest
 
 import io.flutter.embedding.android.FlutterActivity
 

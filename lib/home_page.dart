@@ -75,7 +75,7 @@ class _HomeState extends State<HomePage> {
                   child: new ClipRRect(
                     borderRadius: new BorderRadius.circular(17.0),
                     child: new Image(
-                      image : new AssetImage("assets/image/1.jpg"),
+                      image : new AssetImage("assets/image/a1.jpg"),
                       height: 200.0,
                       width:  200.0,
                       fit: BoxFit.cover,
@@ -86,12 +86,32 @@ class _HomeState extends State<HomePage> {
                 new Container(
                   margin: EdgeInsets.all(10.0),
                   child: new ClipRRect(
+                    clipBehavior: Clip.antiAlias,
                     borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/image/2.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
+                    child: Stack(
+                      children: <Widget>[
+                        new Image(
+                          image : new AssetImage("assets/image/a2.jpg"),
+                          height: 200.0,
+                          width:  200.0,
+                          fit: BoxFit.cover,
+                        ),
+                        Positioned(
+                          bottom: 17,
+                          right: 0,
+                          left: 0,
+                          child: Container(
+                            color: Colors.white,
+                            alignment: Alignment.topCenter,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text('Plant Name'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -101,7 +121,7 @@ class _HomeState extends State<HomePage> {
                   child: new ClipRRect(
                     borderRadius: new BorderRadius.circular(17.0),
                     child: new Image(
-                      image : new AssetImage("assets/image/96.jpg"),
+                      image : new AssetImage("assets/image/a96.jpg"),
                       height: 200.0,
                       width:  200.0,
                       fit: BoxFit.cover,

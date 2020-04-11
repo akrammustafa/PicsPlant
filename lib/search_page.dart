@@ -1,6 +1,5 @@
 
 import 'dart:async';
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:universal_io/io.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,17 +14,16 @@ class _HomeState extends State<SearchPage> {
 
   List<String> paths;
 
-  Future getImagesAsList() async {
+
+    Future getImagesAsList() async {
     print("In GetImage !");
     print("In GetImage !");
 
     paths = new List<String>();
     try{
-      if(kIsWeb){
-        print("We are in the web flutter !");
-      }
 
-      final dir = new Directory("assets/image/");
+      final dir = new Directory("");
+
       List<FileSystemEntity> list = dir.listSync();
       print("Item : " + list[0].path );
       /*dir.list().listen((event) {
@@ -37,6 +35,14 @@ class _HomeState extends State<SearchPage> {
     }
 
   }
+
+
+  /*
+  Future getImagesAsList() async{
+
+    Directory rootPath = await getApplicationDocumentsDirectory();
+    print("Path : " + rootPath.path);
+  } */
 
   @override
   void initState() {
@@ -51,8 +57,13 @@ class _HomeState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return
-      Container(width : double.maxFinite,
-      height : double.maxFinite); /* ListView.builder(
+      Container(
+          child: Image.asset("assets/image/a1.jpg"),
+          width : double.maxFinite,
+      height : double.maxFinite); 
+    
+    
+    /* ListView.builder(
       itemCount: paths == null ? 0 : paths.length,
       itemBuilder: (context,index){
       return Row(

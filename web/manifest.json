@@ -1,11 +1,11 @@
 {
-    "name": "im_rich_app",
-    "short_name": "im_rich_app",
+    "name": "imrichapplatest",
+    "short_name": "imrichapplatest",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A new Flutter application.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
