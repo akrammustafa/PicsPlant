@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 
-class SearchPage extends StatefulWidget {
+class plants_page extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<SearchPage> {
+class _HomeState extends State<plants_page> {
 
   List<String> _paths;
   List<String> _lines;

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:imrichapp/pages/information_page.dart';
 import 'package:imrichapp/pages/home_page.dart';
-import 'package:imrichapp/pages/search_page.dart';
-import 'package:imrichapp/pages/share_page.dart';
+import 'package:imrichapp/pages/plants_page.dart';
+import 'package:imrichapp/pages/mashroom_page.dart';
 import 'package:imrichapp/pages/splash_screen.dart';
 import 'package:imrichapp/widgets/custom_app_bar.dart';
 void main() => runApp(MyApp());
@@ -38,9 +38,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   List<Widget> _widgetOptions = <Widget>[
 
     HomePage(),
-    SearchPage(),
+    plants_page(),
     null,
-    SharePage(),
+    mashroomPage(),
     information_page(),
 
   ];
@@ -114,8 +114,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               title: Text('Camera'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.share),
-              title: Text('Share'),
+              icon: Icon(Icons.show_chart),
+              title: Text('Mushroom'),
 
             ),
             BottomNavigationBarItem(

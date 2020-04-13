@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -62,16 +62,29 @@ class _HomeState extends State<HomePage> {
           height: 100,
           child:
         Center(child:
-        Text("Welcome To PicsPlant",style: TextStyle(fontSize: 34,color:Colors.deepOrange),)),
+               Text(" Welcome to PicsPlant",style: GoogleFonts.dancingScript(
+               textStyle: TextStyle(
+                color: Colors.orange,
+                fontSize: 28,
+                   fontWeight: FontWeight.bold)),),
+            ),),
+      Container(
 
+          child: SizedBox(
+            height: 150,
+            width: 150,
+            child:Image.network("https://theplantguide.net/wp-content/uploads/2017/08/plant-identification.jpg")
+          )
       ),
-        
         Container(
           height: 50,
           child:
-          Center(child:
-          Text("Identify The Plant World ",style: TextStyle(fontSize: 20,color:Colors.green))),
-        )],
+          Text(" Identfy plant the world",style: GoogleFonts.dancingScript(
+          textStyle: TextStyle(
+          color: Colors.orange,
+          fontSize: 28,
+          fontWeight: FontWeight.bold)),),
+          ),],
       );
   }
 }
