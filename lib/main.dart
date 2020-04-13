@@ -2,10 +2,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/information_page.dart';
-import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/home_page.dart';
-import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/search_page.dart';
-import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/share_page.dart';
+import 'package:imrichapp/pages/information_page.dart';
+import 'package:imrichapp/pages/home_page.dart';
+import 'package:imrichapp/pages/search_page.dart';
+import 'package:imrichapp/pages/share_page.dart';
+import 'package:imrichapp/pages/splash_screen.dart';
 import 'package:imrichapp/widgets/custom_app_bar.dart';
 void main() => runApp(MyApp());
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: MyStatefulWidget(),
+      home: SplashScreen(),
     );
   }
 }
@@ -80,52 +81,54 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, kToolbarHeight),
-        child: CustomAppBar(),
-      ),
-      body: Center(
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size(double.infinity, kToolbarHeight),
+          child: CustomAppBar(),
+        ),
+        body: Center(
 
-        child: _image==null?_widgetOptions.elementAt(_selectedIndex):Image.file(_image),
+          child: _image==null?_widgetOptions.elementAt(_selectedIndex):Image.file(_image),
 
-      ),
-
-
-      bottomNavigationBar: BottomNavigationBar(
-
-        unselectedItemColor: Colors.grey,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+        ),
 
 
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_florist),
-            title: Text('Plants'),
+        bottomNavigationBar: BottomNavigationBar(
 
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.camera_alt),
-            title: Text('Camera'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.share),
-            title: Text('Share'),
+          unselectedItemColor: Colors.grey,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
 
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info),
-            title: Text('Info'),
 
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.teal[900],
-        onTap: _onItemTapped,
+              title: Text('Home'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_florist),
+              title: Text('Plants'),
 
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.camera_alt),
+              title: Text('Camera'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.share),
+              title: Text('Share'),
+
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              title: Text('Info'),
+
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.teal[900],
+          onTap: _onItemTapped,
+
+        ),
       ),
     );
   }

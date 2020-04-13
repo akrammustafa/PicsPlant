@@ -21,12 +21,12 @@ class _HomeState extends State<HomePage> {
 
   Future openInBrowser()async{
     // "bla bla       blabla"
-    /*String fixedQueryString = _editTextController.text.replaceAll(" ", "%20");
+    String fixedQueryString = _editTextController.text.replaceAll(" ", "%20");
     String query = "http://google.com/search?q=" + fixedQueryString;
     await launch(
         query,
         forceWebView: true,
-        forceSafariVC: false);*/
+        forceSafariVC: false);
   }
 
   @override
