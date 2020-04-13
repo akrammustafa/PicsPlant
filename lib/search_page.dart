@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:universal_io/io.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 
 class SearchPage extends StatefulWidget {
@@ -15,11 +16,13 @@ class SearchPage extends StatefulWidget {
 
 class _HomeState extends State<SearchPage> {
 
-  List<String> paths;
+  List<String> _paths;
+  List<String> _lines;
 
   @override
   void initState() {
     super.initState();
+    print("In State !");
     getImages();
   }
 
@@ -28,13 +31,30 @@ class _HomeState extends State<SearchPage> {
 
     final Map<String, dynamic> manifestMap = json.decode(manifestContent);
 
+    // for image paths
     final imagePaths = manifestMap.keys
         .where((String key) => key.contains('images/'))
         .where((String key) => key.contains('.jpg'))
         .toList();
 
+    // for file paths
+    final filePaths = manifestMap.keys
+        .where((String key) => key.contains('files/'))
+        .where((String key) => key.contains('.txt'))
+        .toList();
+
+    List<String> files = filePaths;
+
+    // read file content
+    String fileContent = await rootBundle.loadString(files[0]);
+
+    // split content to lists foreach line
+    List<String> lines = fileContent.split("\n");
+    lines.forEach((element) { print("Line : " + element);});
+
     setState(() {
-      paths = imagePaths;
+      _paths = imagePaths;
+      _lines = lines;
     });
   }
 
@@ -42,8 +62,13 @@ class _HomeState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: paths == null ? 0 : paths.length ,
+        itemCount: _paths == null ? 0 : _paths.length ,
         itemBuilder: (context, index){
+
+          List<String> splittedLine = _lines[index].split(",");
+          String header = splittedLine[0];
+          String desc = splittedLine[1];
+
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -66,7 +91,7 @@ class _HomeState extends State<SearchPage> {
                         height: 99,
                       child: FittedBox(
                         fit: BoxFit.fill,
-                          child: Image.asset(paths[index])),
+                          child: Image.asset(_paths[index])),
                     ),
                   ),
                   Column(
@@ -75,11 +100,11 @@ class _HomeState extends State<SearchPage> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0,left: 8.0),
-                        child: Text("Header"),
+                        child: Text(header),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0,left: 8.0),
-                        child: Text("bla"),
+                        child: Text(desc),
                       ),
                     ],
                   )

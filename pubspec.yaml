@@ -28,6 +28,8 @@ dependencies:
   firebase_storage:
   universal_io:
   path_provider:
+  url_launcher: ^5.4.2
+  google_fonts: ^0.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -36,5 +38,8 @@ flutter:
 
   uses-material-design: true
 
+
   assets:
     - assets/images/
+    - assets/files/
+    - assets/logo.PNG

@@ -2,10 +2,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:imrichapp/information_page.dart';
-import 'package:imrichapp/home_page.dart';
-import 'package:imrichapp/search_page.dart';
-import 'package:imrichapp/share_page.dart';
+import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/information_page.dart';
+import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/home_page.dart';
+import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/search_page.dart';
+import 'file:///C:/Users/Dj_MG/AndroidStudioProjects/im_rich/lib/share_page.dart';
+import 'package:imrichapp/widgets/custom_app_bar.dart';
 void main() => runApp(MyApp());
 
 /// This Widget is the main application widget.
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: _title,
       home: MyStatefulWidget(),
     );
@@ -79,12 +81,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('PicsPlant'),
-
-        backgroundColor: Colors.lightGreen,
+      appBar: PreferredSize(
+        preferredSize: const Size(double.infinity, kToolbarHeight),
+        child: CustomAppBar(),
       ),
-
       body: Center(
 
         child: _image==null?_widgetOptions.elementAt(_selectedIndex):Image.file(_image),

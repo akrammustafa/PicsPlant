@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,122 +10,53 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomeState extends State<HomePage> {
+
+  TextEditingController _editTextController;
+
+  @override
+  void initState() {
+    super.initState();
+    _editTextController = new TextEditingController();
+  }
+
+  Future openInBrowser()async{
+    // "bla bla       blabla"
+    /*String fixedQueryString = _editTextController.text.replaceAll(" ", "%20");
+    String query = "http://google.com/search?q=" + fixedQueryString;
+    await launch(
+        query,
+        forceWebView: true,
+        forceSafariVC: false);*/
+  }
+
   @override
   Widget build(BuildContext context) {
     return  new Column(children: <Widget>[
           new Container(
-            height: 250.0,
+            width: double.maxFinite,
+            height: 56.0,
             margin: EdgeInsets.all(10.0),
-            child: new ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/sedir.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-
-                    ),
+            decoration: BoxDecoration(
+            color: Color(0xFFEAECEE),
+            borderRadius: BorderRadius.all(Radius.circular(8.0))),
+            child: Row(children: <Widget>[
+              Flexible(
+                fit: FlexFit.tight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 12.0),
+                    child: TextField(
+                      cursorColor: Color(0xFF5D6D7E),
+                      controller: _editTextController,
+                      decoration: InputDecoration.collapsed(hintText: " Search a plant...  "),),
                   ),
                 ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/sandal.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-
-                    ),
-                  ),
-                ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/servi.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-
-                    ),
-                  ),
-                ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/amanita3.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-
-                    ),
-                  ),
-                ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/1.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/2.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/96.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                new Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: new ClipRRect(
-                    borderRadius: new BorderRadius.circular(17.0),
-                    child: new Image(
-                      image : new AssetImage("assets/images/amanita1.jpg"),
-                      height: 200.0,
-                      width:  200.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              
-
-
-              ],
-            ),
+              Padding(
+                padding: const EdgeInsets.only(right : 12.0),
+                child: GestureDetector(
+                    onTap: ()=> openInBrowser(),
+                    child: Icon(Icons.search)),
+              )
+            ],)
           ),
       Container(
           height: 100,
@@ -133,13 +65,7 @@ class _HomeState extends State<HomePage> {
         Text("Welcome To PicsPlant",style: TextStyle(fontSize: 34,color:Colors.deepOrange),)),
 
       ),
-        Container(
-        height: 50,
-            child:
-        Center(child:
-        Icon(Icons.search,color: Colors.orange))
-
-          ),
+        
         Container(
           height: 50,
           child:
