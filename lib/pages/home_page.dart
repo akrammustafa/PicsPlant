@@ -37,7 +37,7 @@ class _HomeState extends State<HomePage> {
             height: 56.0,
             margin: EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-            color: Color(0xFFEAECEE),
+            color: Colors.blueGrey,
             borderRadius: BorderRadius.all(Radius.circular(8.0))),
             child: Row(children: <Widget>[
               Flexible(
@@ -45,7 +45,7 @@ class _HomeState extends State<HomePage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 12.0),
                     child: TextField(
-                      cursorColor: Color(0xFF5D6D7E),
+                      cursorColor: Color(0xFFFFFFFF),
                       controller: _editTextController,
                       decoration: InputDecoration.collapsed(hintText: " Search a plant...  "),),
                   ),
@@ -59,6 +59,32 @@ class _HomeState extends State<HomePage> {
             ],)
           ),
       Container(
+        child: Row(
+          children: <Widget>[
+            Container(
+              height: 50,
+              width: 100,
+              child:Column(
+                children: <Widget>[
+                  Icon(Icons.camera_alt,color: Colors.blueGrey,),
+                  Text("Camera",style: TextStyle(color: Colors.blueGrey),),
+                ],
+              )
+            ),
+            Container(
+              height: 50,
+              width: 100,
+                child:Column(
+                  children: <Widget>[
+                    Icon(Icons.perm_media,color: Colors.blueGrey,),
+                    Text("Gallery",style: TextStyle(color: Colors.blueGrey),),
+                  ],
+                )
+            )
+          ],
+        ),
+      ),
+      Container(
           height: 100,
           child:
         Center(child:
@@ -68,21 +94,14 @@ class _HomeState extends State<HomePage> {
                 fontSize: 28,
                    fontWeight: FontWeight.bold)),),
             ),),
-      Container(
 
-          child: SizedBox(
-            height: 150,
-            width: 150,
-            child:Image.network("https://theplantguide.net/wp-content/uploads/2017/08/plant-identification.jpg")
-          )
-      ),
         Container(
           height: 50,
           child:
-          Text(" Identfy plant the world",style: GoogleFonts.dancingScript(
+          Text(" Identfy the Plant World",style: GoogleFonts.dancingScript(
           textStyle: TextStyle(
-          color: Colors.orange,
-          fontSize: 28,
+          color: Colors.amber,
+          fontSize: 20,
           fontWeight: FontWeight.bold)),),
           ),],
       );
