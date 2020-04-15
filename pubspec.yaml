@@ -40,7 +40,8 @@ flutter:
 
 
   assets:
-    - assets/images/
+    - assets/mushrooms/
+    - assets/plant/
     - assets/files/
     - assets/logo.PNG
     - assets/logo_2.png

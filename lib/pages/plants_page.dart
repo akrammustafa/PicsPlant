@@ -33,14 +33,14 @@ class _HomeState extends State<plants_page> {
 
     // for image paths
     final imagePaths = manifestMap.keys
-        .where((String key) => key.contains('images/'))
+        .where((String key) => key.contains('plant/'))
         .where((String key) => key.contains('.jpg'))
         .toList();
 
     // for file paths
     final filePaths = manifestMap.keys
         .where((String key) => key.contains('files/'))
-        .where((String key) => key.contains('.txt'))
+        .where((String key) => key.contains('plants.txt'))
         .toList();
 
     List<String> files = filePaths;
@@ -68,6 +68,7 @@ class _HomeState extends State<plants_page> {
           List<String> splittedLine = _lines[index].split(",");
           String header = splittedLine[0];
           String desc = splittedLine[1];
+          String desc1 = splittedLine[2];
 
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -104,7 +105,10 @@ class _HomeState extends State<plants_page> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0,left: 8.0),
-                        child: Text(desc),
+                        child: Column(children: <Widget>[
+                          Text(desc),
+                          Text(desc1)
+                        ],)
                       ),
                     ],
                   )

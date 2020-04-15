@@ -1,0 +1,8 @@
+Bougainvillea,Family:Nyctaginaceae,Genus:Bougainvillea.
+Caryopteris x clandonensis,Family:Lamiaceae,Genus:Caryopteris.
+Chrysanthemum,Family:Asteraceae,Genus:Chrysanthemum L.
+Convallaria majalis,Family:Asparagaceae,Genus:Convallaria.
+Exochorda racemosa,Family:Rosaceae,Genus:Exochorda.
+Betonica officinalis,Family:Lamiaceae,Genus:Betonica.
+Gerbera jamesonii,Family:Asteraceae,Genus:Gerbera.
+Rosa rubiginosa,Family:	Rosaceae,Genus:	Rosa
