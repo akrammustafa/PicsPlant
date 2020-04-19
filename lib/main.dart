@@ -123,7 +123,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               title: Text('Camera'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.show_chart),
+              icon: Icon(Icons.nature),
               title: Text('Mushroom'),
 
             ),

@@ -5,4 +5,10 @@ Convallaria majalis,Family:Asparagaceae,Genus:Convallaria.
 Exochorda racemosa,Family:Rosaceae,Genus:Exochorda.
 Betonica officinalis,Family:Lamiaceae,Genus:Betonica.
 Gerbera jamesonii,Family:Asteraceae,Genus:Gerbera.
-Rosa rubiginosa,Family:	Rosaceae,Genus:	Rosa
+Rosa rubiginosa,Family:Rosaceae,Genus:Rosa.
+Helianthus annuus(sunflower),Family:Asteraceae,Genus:Helianthus.
+jasminum officinale,Family:Oleaceae,Genus:Jasminum.
+Astrantia major,Family:Apiaceae,Genus:Astrantia.
+Penstemon spectabilis,Family:Plantaginaceae,Genus:Penstemon.
+Torenia fournieri,Family:Linderniaceae,Genus:Torenia.
+

@@ -107,7 +107,7 @@ class _HomeState extends State<plants_page> {
                         padding: const EdgeInsets.only(top: 8.0,left: 8.0),
                         child: Column(children: <Widget>[
                           Text(desc),
-                          Text(desc1)
+                          Text(desc1),
                         ],)
                       ),
                     ],

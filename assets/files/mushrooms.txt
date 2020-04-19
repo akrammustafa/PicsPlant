@@ -1,5 +1,5 @@
-Destroying angel (Amanita verna),Not edible
-Conocybe filaris,Not edible:Poisonous.
-Boletus edulis,Edible.
-Cortinarius,Not edible
-Agaricus,edible.
+Destroying angel (Amanita verna),Not edible,Poisonous.
+Conocybe filaris,Not edible,Poisonous.
+Boletus edulis (penny bun),Edible,
+Cortinarius,Not edible,Poisonous.
+Agaricus (button mushroom),edible,

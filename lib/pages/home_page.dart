@@ -31,7 +31,7 @@ class _HomeState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return  new Column(children: <Widget>[
+    return  new ListView(children: <Widget>[
           new Container(
             width: double.maxFinite,
             height: 56.0,
@@ -58,33 +58,7 @@ class _HomeState extends State<HomePage> {
               )
             ],)
           ),
-      Container(
-        child: Row(
-          children: <Widget>[
-            Container(
-              height: 50,
-              width: 100,
-              child:Column(
-                children: <Widget>[
-                  Icon(Icons.camera_alt,color: Colors.blueGrey,),
-                  Text("Camera",style: TextStyle(color: Colors.blueGrey),),
-                ],
-              )
-            ),
-            Container(
-              height: 50,
-              width: 100,
-                child:Column(
-                  children: <Widget>[
-                    Icon(Icons.perm_media,color: Colors.blueGrey,),
-                    Text("Gallery",style: TextStyle(color: Colors.blueGrey),),
-                  ],
-                )
-            )
-          ],
-        ),
-      ),
-      Container(
+              Container(
           height: 100,
           child:
         Center(child:
@@ -94,8 +68,7 @@ class _HomeState extends State<HomePage> {
                 fontSize: 28,
                    fontWeight: FontWeight.bold)),),
             ),),
-
-        Container(
+              Container(
           height: 50,
           child:
           Text(" Identfy the Plant World",style: GoogleFonts.dancingScript(
@@ -103,7 +76,45 @@ class _HomeState extends State<HomePage> {
           color: Colors.amber,
           fontSize: 20,
           fontWeight: FontWeight.bold)),),
-          ),],
+          ),
+
+
+      Container(
+        height: 100,
+        child:
+        Row(children: <Widget>[
+          Image.asset("assets/plant/1.jpg"),
+          Text("Flower of the week"),
+
+
+        ],)
+      ),
+
+      Container(
+
+          height:100,
+          child:
+          Row(children: <Widget>[
+            Image.asset("assets/plant/3.jpg"),
+            Text("How to Identify Plants"),
+
+
+          ],)
+      ),
+
+      Container(
+
+          height:100,
+          child:
+          Row(children: <Widget>[
+            Image.asset("assets/mushrooms/5.jpg"),
+            Text("Most popular mushrooms"),
+
+
+          ],)
+      ),
+
+      ],
       );
   }
 }
