@@ -2,6 +2,9 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:imrichapp/pages/floweroftheweek.dart';
+import 'package:imrichapp/pages/howtodetec.dart';
+import 'package:imrichapp/pages/popularmushroom.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -70,51 +73,96 @@ class _HomeState extends State<HomePage> {
             ),),
               Container(
           height: 50,
-          child:
+          child:Center(child:
           Text(" Identfy the Plant World",style: GoogleFonts.dancingScript(
           textStyle: TextStyle(
           color: Colors.amber,
           fontSize: 20,
           fontWeight: FontWeight.bold)),),
+          )),
+
+      Center(
+        child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.style),
+                title: Text('The Flower of the week '),
+                subtitle: Text('this is the flower jasmin its blabla bla'),
+              ),
+              ButtonBar(
+                children: <Widget>[
+                  FlatButton(
+                    child: const Text('Read More'),
+                    onPressed: () {Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Floweroftheweek()),
+                    );},
+                  ),
+                ],
+              ),
+            ],
           ),
-
-
-      Container(
-        height: 100,
-        child:
-        Row(children: <Widget>[
-          Image.asset("assets/plant/1.jpg"),
-          Text("Flower of the week"),
-
-
-        ],)
+        ),
       ),
 
-      Container(
-
-          height:100,
-          child:
-          Row(children: <Widget>[
-            Image.asset("assets/plant/3.jpg"),
-            Text("How to Identify Plants"),
-
-
-          ],)
+      Center(
+        child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.search),
+                title: Text('How plants are detected ?'),
+                subtitle: Text('this is plants and its ala la identufy its blabla bla'),
+              ),
+              ButtonBar(
+                children: <Widget>[
+                  FlatButton(
+                    child: const Text('Read More'),
+                    onPressed: () {Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HowPlantsDetected()),
+                    );},
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
 
-      Container(
 
-          height:100,
-          child:
-          Row(children: <Widget>[
-            Image.asset("assets/mushrooms/5.jpg"),
-            Text("Most popular mushrooms"),
+      Center(
+        child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.fiber_manual_record),
+                title: Text('Most Popular Muhsrooms '),
+                subtitle: Text('this is the most popular mushroom of the world jasmin its blabla bladgdfgdfgdfgdgdfdgdfgdfgdfgsfdfgdfgdfgdfhhfhfhfhytyrtyrtyrtyrtyrytyrytyrtyrtytyrfhtgfsfdghj...'),
+              ),
+              ButtonBar(
+                children: <Widget>[
+                  FlatButton(
+                    child: const Text('Read More'),
+                    onPressed: () { Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Mostpopularmushroom()),
+                    );
+                      },
+                  ),
+             //WillPopScope//
+                ],
+              ),
 
-
-          ],)
+            ],
+          ),
+        ),
       ),
 
-      ],
-      );
+      ]);
   }
 }
