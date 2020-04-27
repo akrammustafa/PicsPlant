@@ -142,7 +142,7 @@ class _HomeState extends State<HomePage> {
               const ListTile(
                 leading: Icon(Icons.fiber_manual_record),
                 title: Text('Most Popular Muhsrooms '),
-                subtitle: Text('this is the most popular mushroom of the world jasmin its blabla bladgdfgdfgdfgdgdfdgdfgdfgdfgsfdfgdfgdfgdfhhfhfhfhytyrtyrtyrtyrtyrytyrytyrtyrtytyrfhtgfsfdghj...'),
+                subtitle: Text('Here, we take a look at the flavor profiles and characteristics of the most popular mushroom varieties.\n1. White Button Mushroom...'),
               ),
               ButtonBar(
                 children: <Widget>[
