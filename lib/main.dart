@@ -2,6 +2,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:imrichapp/pages/camera_page.dart';
 import 'package:imrichapp/pages/information_page.dart';
 import 'package:imrichapp/pages/home_page.dart';
 import 'package:imrichapp/pages/plants_page.dart';
@@ -20,14 +21,13 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: Colors.red,
       ),
-
-
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: SplashScreen(),
+      home: CameraPage(),
+      //home: SplashScreen(),
     );
   }
 }
@@ -48,7 +48,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
     HomePage(),
     plants_page(),
-    null,
+    CameraPage(),
     mashroomPage(),
     information_page(),
 

@@ -30,6 +30,9 @@ dependencies:
   path_provider:
   url_launcher: ^5.4.2
   google_fonts: ^0.4.0
+  tflite: ^1.0.5
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -46,3 +49,14 @@ flutter:
     - assets/logo.PNG
     - assets/logo_2.png
     - assets/mostpopular/
+    - assets/images/papatya.jpg
+    - assets/images/karahindiba.jpg
+    - assets/images/sunflower.jpg
+    - assets/images/gul.jpg
+    - assets/images/rose.jpg
+    - assets/images/sunflower2.jpg
+    - assets/model.tflite
+    - assets/results.txt
+    - assets/images/placeholder.png
+    - assets/images/image_pick_gallery.png
+    - assets/images/
