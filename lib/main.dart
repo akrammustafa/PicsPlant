@@ -26,8 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: CameraPage(),
-      //home: SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }
@@ -61,31 +60,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       _selectedIndex = index;
 
     });
-    if(index==2){
-
-      showDialog(context: context,builder:(context){
-        return AlertDialog(
-          title:Text("Camera or Gallery"),
-          content: Row(
-            children: <Widget>[
-              IconButton(icon:Icon(Icons.camera_enhance), onPressed:()=> getImage(ImageSource.camera)),
-
-              IconButton(icon:Icon(Icons.photo), onPressed: ()=> getImage(ImageSource.gallery))
-
-            ],
-          ),
-        );
-      });
-      return null;}
   }
-  Future getImage(ImageSource imageSource) async {
-    var image = await ImagePicker.pickImage(source: imageSource);
 
-    setState(() {
-
-      _image = image;
-    });
-  }
 
 
   @override

@@ -20,6 +20,7 @@ class _CameraState extends State<CameraPage> {
   String _path;
 
   Future getImage(ImageSource mSource) async {
+    startPredict = false;
     File imageFile = await ImagePicker.pickImage(source: mSource);
 
     print("Selected image path : " + imageFile.path.toString());
@@ -32,12 +33,11 @@ class _CameraState extends State<CameraPage> {
 
   Future<List<dynamic>> _predict() async {
 
-    if(_path == null){
-        print("Image does not exist !");
-    }else{
-      print("Before prediction !");
-      return TFLiteProvider(path: _path).predict();
-    }
+        final result = await TFLiteProvider(path: _path).predict();
+        setState(() {
+          _results = result;
+        });
+
   }
 
 
@@ -56,24 +56,6 @@ class _CameraState extends State<CameraPage> {
           height: double.maxFinite,
           child: Column(
             children: <Widget>[
-
-              /// Future
-              Visibility(
-                visible: false,
-                child: FutureBuilder(
-                  future: startPredict ? _predict() : null,
-                  builder: (context, snapshot){
-
-                    print("OnResults !");
-
-                    setState(() {
-                      _results = snapshot.data;
-                    });
-                    return SizedBox.shrink();
-                  },
-                ),
-              ),
-
               Container(
                 margin: EdgeInsets.all(16),
                 width: double.maxFinite,
@@ -84,10 +66,12 @@ class _CameraState extends State<CameraPage> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(25)),
-                  child: Image.asset(
-                    _path == null ? "assets/images/placeholder.png" : _path,
-                    fit: BoxFit.fill,
-                  ),
+                   child: _path == null ?
+                   Image.asset( "assets/images/placeholder.png",fit: BoxFit.fill)
+                       : Image.file(
+                       File(_path),
+                       fit: BoxFit.cover,
+                     filterQuality: FilterQuality.high,),
                 ),
               ),
 
@@ -106,11 +90,27 @@ class _CameraState extends State<CameraPage> {
                         color: MColors.main_green,
                         child: Text("Identify Image", style: TextStyle(color: Colors.white),),
                         onPressed: (){
-
-                          print("Identify clicked !");
-                          setState(() {
-                            startPredict = true;
-                          });
+                          if(_path != null)
+                              _predict();
+                          else{
+                            showDialog(
+                                context: context,
+                                child: AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(10))
+                                  ),
+                                  content: Text("\nPlease select an image..", style: TextStyle(color: Colors.black87, fontSize: 18),),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      color: Colors.white,
+                                      child: Text("OK", style: TextStyle(color: MColors.main_green,),),
+                                      onPressed: (){
+                                        Navigator.pop(context);
+                                      },
+                                    )
+                                  ],
+                                ));
+                          }
                         },
                       ),
                     ),
@@ -147,25 +147,35 @@ class _CameraState extends State<CameraPage> {
                 ),
               ),
 
-              Container(
-                margin: EdgeInsets.all(16),
-                padding: EdgeInsets.all(16),
-                width: double.maxFinite,
-                height: _height * ( 2 / 5),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.black87.withOpacity(0.2)),
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                ),
-                child: _results == null ? Text("Results will be here... ")
-                  : Text.rich(
-                      TextSpan(
-                          text: "Results:\n\n",
-                          children :<TextSpan> [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16),
+                  width: double.maxFinite,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: Colors.black87.withOpacity(0.2)),
+                    borderRadius: BorderRadius.all(Radius.circular(25)),
+                  ),
+                  child: _results != null ? ListView.builder(
+                      itemCount: _results.length,
+                      itemBuilder: (context, index){
+                        return Text.rich(
                             TextSpan(
-                              text : _results.toString() ,
-                            ),
-                          ]
-                      )
+                                text : "Result ${index + 1}:",
+                                style: TextStyle(color: Colors.black54, fontSize: 20, fontWeight: FontWeight.bold),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: "\nLabel: ${_results[index]["label"]}",
+                                      style: getStyleForResults()
+                                  )
+                                  ,TextSpan(
+                                      text: "\nConfidence: ${_results[index]["confidence"]}",
+                                      style: getStyleForResults()
+                                  )
+                                ]
+                            )
+                        );
+                      }) : Text("Results will be here.. ")
                 ),
               ),
 
@@ -174,5 +184,9 @@ class _CameraState extends State<CameraPage> {
         ),
       ),
     );
+  }
+
+  TextStyle getStyleForResults(){
+    return TextStyle( color:  Colors. black54, fontSize: 15);
   }
 }

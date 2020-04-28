@@ -33,7 +33,7 @@ class TFLiteProvider  {
 
       // add error to list
       willReturn.add("Error : " + e.toString());
-
+      print("Error: " + e.toString());
     }
 
     if (willReturn.length != 0)
