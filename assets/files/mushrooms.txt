@@ -3,3 +3,4 @@ Conocybe filaris,Not edible,Poisonous.
 Boletus edulis (penny bun),Edible,
 Cortinarius,Not edible,Poisonous.
 Agaricus (button mushroom),edible,
+Amanita muscaria(fly agaric),Not edible,poisonous
