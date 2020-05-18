@@ -56,7 +56,7 @@ class _HomeState extends State<HomePage> {
                 padding: const EdgeInsets.only(right : 12.0),
                 child: GestureDetector(
                     onTap: ()=> openInBrowser(),
-                    child: Icon(Icons.search)),
+                    child: Icon(Icons.search,color: Colors.orangeAccent,)),
               )
             ],)
           ),
@@ -86,9 +86,9 @@ class _HomeState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const ListTile(
-                leading: Icon(Icons.style),
-                title: Text('The Flower of the week '),
-                subtitle: Text('this is the flower jasmin its blabla bla'),
+                leading: Icon(Icons.favorite_border,color: Colors.red,),
+                title: Text('The Flower of the week ',style: TextStyle(color: Colors.amber)),
+                subtitle: Text('Asters are beautiful perennials that are found wild in North America and southern Europe. The genus Aster includes some 600 species of widely distributed flowering plants in the family Asteraceae...'),
               ),
               ButtonBar(
                 children: <Widget>[
@@ -112,8 +112,8 @@ class _HomeState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const ListTile(
-                leading: Icon(Icons.search),
-                title: Text('How plants are detected ?'),
+                leading: Icon(Icons.search,color: Colors.green,),
+                title: Text('How plants are detected ?',style: TextStyle(color: Colors.amber)),
                 subtitle: Text('Image recognition is a computer vision task that works to identify and categorize various elements of images and/or videos. Image recognition models are trained to take an image...'),
               ),
               ButtonBar(
@@ -139,8 +139,8 @@ class _HomeState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Most Popular Muhsrooms '),
+                leading: Icon(Icons.blur_circular,color: Colors.yellow,),
+                title: Text('Most Popular Muhsrooms ',style: TextStyle(color: Colors.amber),),
                 subtitle: Text('Here, we take a look at the flavor profiles and characteristics of the most popular mushroom varieties.\n1. White Button Mushroom...'),
               ),
               ButtonBar(

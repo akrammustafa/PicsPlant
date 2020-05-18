@@ -85,13 +85,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           unselectedItemColor: Colors.grey,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home,color: Colors.teal,),
 
 
               title: Text('Home'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.local_florist),
+              icon: Icon(Icons.local_florist,color: Colors.green,),
               title: Text('Plants'),
 
             ),
@@ -100,18 +100,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               title: Text('Camera'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.nature),
+              icon: Icon(Icons.blur_circular,color: Colors.yellow,),
               title: Text('Mushroom'),
 
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.info),
+              icon: Icon(Icons.info,color: Colors.greenAccent,),
               title: Text('Info'),
 
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.teal[900],
+          selectedItemColor: Colors.white70,
           onTap: _onItemTapped,
 
         ),
