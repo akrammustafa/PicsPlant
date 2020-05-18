@@ -96,7 +96,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.camera_alt),
+              icon: Icon(Icons.camera_alt,color: Colors.blueGrey,),
               title: Text('Camera'),
             ),
             BottomNavigationBarItem(

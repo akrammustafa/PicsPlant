@@ -62,15 +62,16 @@ class _HomeState extends State<HomePage> {
           ),
               Container(
           height: 100,
-          child:
-        Center(child:
+          child: Center(child:
                Text(" Welcome to PicsPlant",style: GoogleFonts.dancingScript(
                textStyle: TextStyle(
                 color: Colors.orange,
                 fontSize: 28,
                    fontWeight: FontWeight.bold)),),
             ),),
-              Container(
+      Center(child:Image.asset('assets/images/mainlogo.png',height: 50,width: 50,)),
+
+      Container(
           height: 50,
           child:Center(child:
           Text(" Identfy the Plant World",style: GoogleFonts.dancingScript(
