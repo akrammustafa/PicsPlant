@@ -55,8 +55,10 @@ flutter:
     - assets/images/gul.jpg
     - assets/images/rose.jpg
     - assets/images/sunflower2.jpg
+    - assets/images/image_recogntion_how.jpg
     - assets/model.tflite
     - assets/results.txt
     - assets/images/placeholder.png
     - assets/images/image_pick_gallery.png
     - assets/images/
+    - assets/storage/

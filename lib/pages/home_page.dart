@@ -23,7 +23,6 @@ class _HomeState extends State<HomePage> {
   }
 
   Future openInBrowser()async{
-    // "bla bla       blabla"
     String fixedQueryString = _editTextController.text.replaceAll(" ", "%20");
     String query = "http://google.com/search?q=" + fixedQueryString;
     await launch(
@@ -115,7 +114,7 @@ class _HomeState extends State<HomePage> {
               const ListTile(
                 leading: Icon(Icons.search),
                 title: Text('How plants are detected ?'),
-                subtitle: Text('this is plants and its ala la identufy its blabla bla'),
+                subtitle: Text('Image recognition is a computer vision task that works to identify and categorize various elements of images and/or videos. Image recognition models are trained to take an image...'),
               ),
               ButtonBar(
                 children: <Widget>[
