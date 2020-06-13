@@ -1,4 +1,5 @@
 
+import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
 import 'package:tflite/tflite.dart';
@@ -32,6 +33,7 @@ class TFLiteProvider  {
     }catch(e){
 
       // add error to list
+      print("In TFLite loadModal!");
       willReturn.add("Error : " + e.toString());
       print("Error: " + e.toString());
     }
@@ -41,14 +43,24 @@ class TFLiteProvider  {
     else{
 
       try{
-        var imageBytes = (await rootBundle.load(path)).buffer;
-        img.Image oriImage = img.decodeJpg(imageBytes.asUint8List());
+        // our new implemented part *********
+        Uri myUri = Uri.parse(path);
+        File imageFile = new File.fromUri(myUri);
+        Uint8List imageBytes;
+        await imageFile.readAsBytes().then((value){
+          imageBytes = Uint8List.fromList(value);
+        });
+        // our new implemented part *********
+
+        //var imageBytes = (await rootBundle.load(path)).buffer;
+        img.Image oriImage = img.decodeJpg(imageBytes);
         img.Image resizedImage = img.copyResize(oriImage,width: 224, height: 224);
 
         return  Tflite.runModelOnBinary(
           binary: _imageToByteListFloat32(resizedImage, 224, 127.5, 127.5),
         );
       }catch(e){
+        print("In TFLite rootBundle!");
         print("Error : " + e.toString());
       }
 

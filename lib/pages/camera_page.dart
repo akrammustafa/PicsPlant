@@ -1,4 +1,4 @@
-  import 'dart:io';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +7,10 @@ import 'package:imrichapp/ml/tflite_provider.dart';
 import 'package:imrichapp/res/colors.dart' as MColors;
 
 class CameraPage extends StatefulWidget {
+
   @override
   _CameraState createState() => _CameraState();
+
 }
 
 class _CameraState extends State<CameraPage> {
@@ -20,6 +22,7 @@ class _CameraState extends State<CameraPage> {
   String _path;
 
   Future getImage(ImageSource mSource) async {
+
     startPredict = false;
     File imageFile = await ImagePicker.pickImage(source: mSource);
 
@@ -33,7 +36,9 @@ class _CameraState extends State<CameraPage> {
 
   Future<List<dynamic>> _predict() async {
 
+        print("In predicet with path  : " + _path.toString());
         final result = await TFLiteProvider(path: _path).predict();
+
         setState(() {
           _results = result;
         });
