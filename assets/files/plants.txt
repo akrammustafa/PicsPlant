@@ -1,5 +1,5 @@
 Bougainvillea(paperflower),Family:Nyctaginaceae,Genus:Bougainvillea.
-Caryopteris x clandonensis(blue spirea),Family:Lamiaceae,Genus:Caryopteris.
+Caryopteris x (blue spirea),Family:Lamiaceae,Genus:Caryopteris.
 Chrysanthemum(chrysanths),Family:Asteraceae,Genus:Chrysanthemum L.
 Convallaria majalis(lily of the valley),Family:Asparagaceae,Genus:Convallaria.
 Exochorda racemosa(pearlbush),Family:Rosaceae,Genus:Exochorda.
@@ -7,8 +7,5 @@ Betonica officinalis(betony),Family:Lamiaceae,Genus:Betonica.
 Gerbera jamesonii(Barberton daisy),Family:Asteraceae,Genus:Gerbera.
 Rosa rubiginosa(sweetbriar rose),Family:Rosaceae,Genus:Rosa.
 Helianthus annuus(Sunflower),Family:Asteraceae,Genus:Helianthus.
-jasminum officinale(white jasmine),Family:Oleaceae,Genus:Jasminum.
-Astrantia major,Family:Apiaceae,Genus:Astrantia.
-Penstemon spectabilis,Family:Plantaginaceae,Genus:Penstemon.
-Torenia fournieri(wishbone flower),Family:Linderniaceae,Genus:Torenia.
+jasminum officinale(white jasmine),Family:Oleaceae,Genus:Jasminum./
 

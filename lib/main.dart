@@ -9,6 +9,7 @@ import 'package:imrichapp/pages/plants_page.dart';
 import 'package:imrichapp/pages/mashroom_page.dart';
 import 'package:imrichapp/pages/splash_screen.dart';
 import 'package:imrichapp/widgets/custom_app_bar.dart';
+
 void main() => runApp(MyApp());
 
 /// This Widget is the main application widget.
@@ -17,10 +18,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: Colors.red,
-      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
