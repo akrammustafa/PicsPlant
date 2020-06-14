@@ -27,7 +27,7 @@ class HowPlantsDetected extends StatelessWidget {
 
           Card(
             color: Colors.blueGrey,child: Column(children: <Widget>[
-            Container(child: Align(alignment: Alignment(-1, 0),child: Text("                                      What is image recognation?",style: TextStyle(color: Colors.black,fontSize: 15)),)),
+            Container(child: Align(alignment: Alignment(-1, 0),child: Text("                    What is image recognation?",style: TextStyle(color: Colors.black,fontSize: 15)),)),
             Container(child: Image.asset('assets/images/image_recogntion_how.jpg',height: 250,width: 300,),),
             Container(child: Align(alignment: Alignment(-1, 0),child: Text("Image recognition is a computer vision task that works to identify and categorize various elements of images and/or videos."),) ,),
             Container(child: Align(alignment: Alignment(-1, 0),child: Text("Image recognition models are trained to take an image as input and output one or more labels describing the image. The set of possible output labels are referred to as target classes. Along with a predicted class, image recognition models may also output a confidence score related to how certain the model is that an image belongs to a class.\n"),) ,),

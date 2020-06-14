@@ -26,7 +26,7 @@ class _HomeState extends State<information_page> {
 
         child: new Text("For more information, please contact us"),
         ),
-        Container(child : new Text("PicsPlant@Gmail.com"),
+        Container(child : new Text("PicsPlant@gmail.com"),
         ),
 
 

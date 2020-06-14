@@ -26,7 +26,7 @@ class Floweroftheweek extends StatelessWidget {
 
           Card(
             color: Colors.blueGrey,child: Column(children: <Widget>[
-            Container(child: Align(alignment: Alignment(-1, 0),child: Text("                         Aster amellus",style: TextStyle(color: Colors.black,fontSize: 25)),)),
+            Container(child: Align(alignment: Alignment(-1, 0),child: Text("                Aster amellus",style: TextStyle(color: Colors.black,fontSize: 25)),)),
             Container(child: Image.asset('assets/images/aster.jpg',height: 250,width: 300,),),
             Container(child: Align(alignment: Alignment(-1, 0),child: Text("Aster is a genus of perennial flowering plants in the family Asteraceae. Its circumscription has been narrowed, and it now encompasses around 180 species, all but one of which are restricted to Eurasia; many species formerly in Aster are now in other genera of the tribe Astereae. Aster amellus is the type species of the genus and the family Asteraceae.\n"),) ,),
             Container(child: Align(alignment: Alignment(-1, 0),child: Text("Size: Asters range from 1 to 6 feet tall and 1 to 4 feet wide, with some varieties being of indeterminate width.\n"),) ,),
